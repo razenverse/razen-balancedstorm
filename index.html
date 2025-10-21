@@ -1,202 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Razen – The Balanced Storm</title>
-<style>
-  :root {
-    --accent:#0ea5ff;
-    --muted:#6b7280;
-    --border:#e5e7eb;
-    --bg:#fff;
-    --text:#111;
-  }
-  html,body{
-    margin:0;
-    padding:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:Georgia,"Times New Roman",serif;
-  }
-  .wrap{
-    max-width:980px;
-    margin:28px auto;
-    padding:20px;
-  }
-  header{
-    border-bottom:1px solid var(--border);
-    padding-bottom:12px;
-  }
-  .title{font-size:32px;margin:6px 0;}
-  .subtitle{color:var(--muted);font-style:italic;margin-bottom:8px;}
-  .meta{color:var(--muted);font-size:14px;margin-bottom:12px;}
-  .content{
-    display:flex;
-    gap:20px;
-    align-items:flex-start;
-    flex-wrap:wrap;
-  }
-  .infobox{
-    width:280px;
-    border:1px solid var(--border);
-    background:#fbfdff;
-    padding:12px;
-    border-radius:8px;
-    flex-shrink:0;
-  }
-  .infobox img{
-    width:100%;
-    height:auto;
-    border-radius:6px;
-    margin-bottom:8px;
-    object-fit:cover;
-  }
-  .infobox table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:14px;
-  }
-  .infobox td{
-    padding:6px 4px;
-    vertical-align:top;
-  }
-  .infobox td:first-child{
-    color:var(--text);
-    font-weight:700;
-    width:110px;
-  }
-  article{flex:1;min-width:260px;}
-  blockquote{
-    border-left:4px solid var(--accent);
-    background:#f1fbff;
-    padding:12px 14px;
-    margin:18px 0;
-    border-radius:6px;
-    color:var(--accent);
-    font-weight:600;
-  }
-  h2{
-    font-size:18px;
-    border-bottom:1px solid var(--border);
-    padding-bottom:8px;
-    margin-top:18px;
-  }
-  p{margin:12px 0;}
-  .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-    gap:12px;
-    margin-top:12px;
-  }
-  .char-card{
-    border:1px solid var(--border);
-    padding:8px;
-    border-radius:8px;
-    text-align:center;
-    background:#fff;
-  }
-  .char-card img{
-    width:100%;
-    height:140px;
-    object-fit:cover;
-    border-radius:8px;
-    margin-bottom:8px;
-  }
-  footer{
-    margin-top:28px;
-    border-top:1px solid var(--border);
-    padding-top:12px;
-    color:var(--muted);
-    font-size:13px;
-    text-align:center;
-  }
-  @media(max-width:800px){
-    .content{flex-direction:column;}
-    .infobox{width:100%;}
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Razenverse Archives – Badai yang Seimbang</title>
+  <meta name="description" content="Razenverse Archives. Catatan hidup, refleksi, dan simbolisme karakter dari Razen.">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --text:#0b1220;
+      --accent:#0b6cff;
+      --border:#e6e9ee;
+      --maxw:1000px;
+      --serif:'Georgia',serif;
+      --sans:'Segoe UI',Tahoma,sans-serif;
+    }
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw);margin:28px auto;padding:28px;}
+    .logo{text-align:center;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-size:22px;color:#0b1220;
+      border-bottom:2px solid var(--border);padding-bottom:8px;margin-bottom:24px;}
+    .logo span{color:var(--accent);font-weight:800;text-shadow:0 0 6px rgba(11,108,255,0.3);}
+    .logo-sub{text-align:center;color:var(--muted);font-size:13px;margin-top:-12px;letter-spacing:1px;text-transform:uppercase;}
+    header{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
+    .title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--text)}
+    .subtitle{color:var(--muted);font-size:14px;margin-top:4px}
+    .infobox{float:right;width:300px;background:#fbfdff;border:1px solid var(--border);padding:14px;border-radius:4px;margin-left:18px;}
+    .infobox img{width:100%;height:auto;border-radius:4px;margin-bottom:10px}
+    .infobox table{width:100%;font-size:13px;color:var(--muted)}
+    h2{margin-top:24px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:8px;font-size:18px}
+    p{line-height:1.6;margin:12px 0}
+    blockquote{border-left:4px solid var(--accent);margin:18px 0;padding:10px 16px;background:rgba(11,108,255,0.05);color:#0b3f8f}
+    table.symbols{width:100%;border-collapse:collapse;margin-top:12px;background:#fff}
+    table.symbols th, table.symbols td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle}
+    table.symbols th{color:var(--muted);font-weight:600;text-align:left;font-size:13px}
+    .char-img{width:110px;height:110px;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
+    footer{margin-top:28px;border-top:1px solid var(--border);padding-top:14px;color:var(--muted);font-size:13px}
+    .quote-end{margin-top:18px;font-style:italic;color:#0b3f8f;text-align:center;font-size:14px}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    @media(max-width:880px){.infobox{float:none;width:100%;margin:12px 0 22px 0}}
+  </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="container">
+    
+    <div class="logo">RAZENVERSE <span>ARCHIVES</span></div>
+    <div class="logo-sub">Personal Record • Project Balance</div>
+
     <header>
-      <div class="title">Razen – The Balanced Storm</div>
-      <div class="subtitle">Arsip Resmi Razenverse — Profil Persona Konseptual</div>
-      <div class="meta"><strong>Usia:</strong> 19 tahun (lahir akhir 2005) • <strong>Simbol:</strong> Biru Listrik ⚡</div>
+      <div style="flex:1;min-width:260px">
+        <div class="title">Razen – Badai yang Seimbang</div>
+        <div class="subtitle">Catatan hidup dan persona konseptual — perjalanan menuju keseimbangan diri</div>
+      </div>
+      <div style="text-align:right;color:var(--muted);min-width:160px">
+        <div><strong>Usia:</strong> 19 tahun (lahir akhir 2005)</div>
+        <div style="margin-top:6px"><strong>Simbol:</strong> Biru Listrik ⚡</div>
+      </div>
     </header>
 
-    <div class="content">
-      <aside class="infobox" aria-label="Kotak Informasi">
-        <img src="images/razen-portrait.png" alt="Potret Razen" />
-        <table>
-          <tr><td>Nama lengkap</td><td>A.</td></tr>
-          <tr><td>Alias</td><td>The Balanced Storm</td></tr>
-          <tr><td>Profesi</td><td>Pemikir / Persona Konseptual</td></tr>
-          <tr><td>Periode</td><td>Transformasi Lockdown (2020–2021)</td></tr>
-          <tr><td>Kebangsaan</td><td>Indonesia</td></tr>
-          <tr><td>Motto</td><td><em>Keseimbangan melalui kesadaran.</em></td></tr>
-        </table>
-      </aside>
+    <aside class="infobox">
+      <img src="images/razen-portrait.png" alt="Potret Razen" />
+      <table>
+        <tbody>
+          <tr><td><strong>Nama</strong></td><td>A.</td></tr>
+          <tr><td><strong>Alias</strong></td><td>Badai yang Seimbang</td></tr>
+          <tr><td><strong>Kebangsaan</strong></td><td>Indonesia</td></tr>
+          <tr><td><strong>Periode Penting</strong></td><td>Transformasi Lockdown (2020–2021)</td></tr>
+          <tr><td><strong>Motto</strong></td><td><em>Keseimbangan lewat kesadaran.</em></td></tr>
+        </tbody>
+      </table>
+    </aside>
 
-      <article>
+    <article>
+      <section>
         <blockquote>
-          “Keseimbangan bukanlah kedamaian — melainkan titik di mana kekacauan belajar disiplin.”  
-          — Razen (catatan pribadi, 2025)
+          “Keseimbangan bukan berarti tenang — tapi momen di mana kekacauan akhirnya nurut sama lo.”  
+          — Razen, 2025
         </blockquote>
+      </section>
 
-        <section id="intro">
-          <h2>Pengenalan</h2>
-          <p><strong>Razen</strong> adalah representasi dari seseorang yang pernah dikuasai amarah, kehilangan arah, namun perlahan belajar berdamai dengan dirinya sendiri. Ia lahir bukan dari ketenangan, melainkan dari kekacauan yang dijinakkan. Setiap luka masa lalunya menjadi fondasi kesadaran yang kini membentuk keteguhan dirinya.</p>
-          <p>Dalam dunia konseptualnya, Razen berdiri di antara dua kutub: badai dan kesunyian. Ia bukan pahlawan, bukan pula penjahat — melainkan simbol dari manusia yang terus bertumbuh, memilih untuk tidak lagi melawan badai, tetapi menjadi bagian dari ritmenya.</p>
-        </section>
+      <section id="intro">
+        <h2>Pengenalan</h2>
+        <p><strong>Razen</strong> bukan cuma persona, tapi refleksi dari perjalanan gue sendiri. Dari bocah yang gampang kebawa emosi, ngomong sembarangan, sampai akhirnya sadar kalau hidup itu soal kendali. Gue belajar, diam bukan berarti kalah. Kadang justru itu bentuk kekuatan paling tinggi.</p>
+      </section>
 
-        <section id="symbolism">
-          <h2>Filosofi dan Simbolisme</h2>
-          <p>Biru listrik ⚡ menjadi lambang utamanya — warna yang mewakili kejernihan pikiran di tengah intensitas emosi. Cahaya biru adalah ketenangan yang lahir dari badai; bukan karena tiadanya guntur, melainkan karena seseorang telah belajar mendengarkan suaranya tanpa gentar.</p>
-          <p>Bagi Razen, kekuatan sejati bukanlah kemampuan untuk menghancurkan, melainkan kekuatan untuk menahan. Ia percaya bahwa diam yang sadar lebih kuat dari seribu teriakan tanpa arah.</p>
-        </section>
+      <section id="early-life">
+        <h2>Masa Awal</h2>
+        <p>Gue lahir di Indonesia, akhir tahun 2005. Dulu gue reaktif banget, bawaannya pengen menang debat terus. Tapi dari hal kecil — kayak komentar positif random dari orang di internet — gue sadar, hal sekecil itu bisa nyentuh banget. Dari situ gue janji ke diri sendiri: gue bakal berubah. Pelan, tapi pasti.</p>
+      </section>
 
-        <section id="gallery">
-          <h2>Galeri Karakter</h2>
-          <p>Setiap karakter berikut merepresentasikan satu sisi dari diri Razen — dari disiplin, pengendalian, hingga konflik batin. Mereka bukan hanya sosok fiksi yang dikagumi, tetapi refleksi dari perjalanan mental dan emosionalnya.</p>
-          <div class="gallery">
-            <div class="char-card"><img src="images/jotaro.png" alt="Kujo Jotaro"><div>Kujo Jotaro</div></div>
-            <div class="char-card"><img src="images/ghost.png" alt="Ghost"><div>Simon “Ghost” Riley</div></div>
-            <div class="char-card"><img src="images/blackpanther.png" alt="Black Panther"><div>Black Panther</div></div>
-            <div class="char-card"><img src="images/garou.png" alt="Garou"><div>Garou</div></div>
-            <div class="char-card"><img src="images/law.png" alt="Trafalgar Law"><div>Trafalgar Law</div></div>
-            <div class="char-card"><img src="images/zoro.png" alt="Zoro"><div>Roronoa Zoro</div></div>
-            <div class="char-card"><img src="images/itachi.png" alt="Itachi"><div>Itachi Uchiha</div></div>
-            <div class="char-card"><img src="images/jin-kazama.png" alt="Jin Kazama"><div>Jin Kazama</div></div>
-            <div class="char-card"><img src="images/levi.png" alt="Levi"><div>Levi Ackerman</div></div>
-            <div class="char-card"><img src="images/raiden.png" alt="Raiden"><div>Raiden</div></div>
-            <div class="char-card"><img src="images/daniel.png" alt="Daniel Park"><div>Daniel Park</div></div>
-            <div class="char-card"><img src="images/eli-jang.png" alt="Eli Jang"><div>Eli Jang</div></div>
-            <div class="char-card"><img src="images/tsukasa.jpg" alt="Tsukasa"><div>Tsukasa Shishio</div></div>
-          </div>
-        </section>
+      <section id="turning-point">
+        <h2>Titik Balik — Era Lockdown</h2>
+        <p>Waktu lockdown, hidup gue kayak direm total. Di masa itu gue kenal sama dua orang — sebut aja <strong>Si A</strong> dan <strong>Si L</strong>. Dua-duanya ninggalin jejak kuat. Ada rasa yang gagal, ada pelajaran yang nyangkut. Tapi gue belajar satu hal: kebaikan nggak harus dibales buat tetep pantas dijaga.</p>
+      </section>
 
-        <section id="timeline">
-          <h2>Linimasa Perjalanan</h2>
-          <p><strong>2018–2019:</strong> Masa pencarian identitas, diwarnai impulsif dan konflik batin. Banyak keputusan diambil dengan emosi, meninggalkan luka yang kemudian menjadi bahan refleksi mendalam.</p>
-          <p><strong>2020–2021:</strong> Periode lockdown menjadi titik balik — saat kesunyian memaksa dirinya menatap cermin dan berjanji untuk berubah. Di sinilah lahir tekad untuk menata ulang cara berpikir, cara berbicara, dan cara memandang hidup.</p>
-          <p><strong>2022–2024:</strong> Fase pematangan kesadaran. Ia mulai memahami bahwa tidak semua pertempuran perlu dimenangkan — beberapa cukup disadari dan dilepaskan.</p>
-          <p><strong>2025:</strong> Lahirnya <em>Razenverse Archives</em> — bukan sekadar proyek dokumentasi, tapi bentuk penghormatan pada perjalanan pribadi: dari remaja yang meledak-ledak menjadi sosok yang tenang namun berbahaya, seperti petir di balik awan.</p>
-        </section>
+      <section id="vocational">
+        <h2>Fase Pertumbuhan (2021–2024)</h2>
+        <p>Masuk fase baru, gue mulai benerin diri. Nahan kata-kata kasar, belajar tenang, belajar mikir dulu baru gerak. Gue juga mulai ngerti gimana rasanya kerja keras tanpa mikirin gengsi. Selama lo ngerjain sesuatu dengan hati, kotor, lelah, atau robek pun rasanya tetep berarti.</p>
+      </section>
 
-        <section id="reflections">
-          <h2>Refleksi</h2>
-          <p>Setiap manusia memiliki versi dirinya yang sedang berjuang. Razen hanyalah satu dari banyak yang memilih bertahan — bukan karena tak takut, tapi karena ia sudah berdamai dengan ketakutan itu. Di dalam dirinya, badai tak lagi menjadi ancaman, melainkan sahabat yang menuntun pada arah baru.</p>
-          <p>Filosofi “The Balanced Storm” bukan tentang mencari kedamaian sempurna, tapi tentang berjalan di antara dua dunia: ketegangan dan ketenangan, logika dan emosi, kekuatan dan kelembutan. Ia hidup di tengah kontradiksi, namun menemukan harmoni di dalamnya.</p>
-          <p>Dan mungkin, di setiap jiwa yang sunyi, ada sedikit bagian dari Razen — badai kecil yang sedang belajar tenang.</p>
-        </section>
+      <section id="personality">
+        <h2>Kepribadian &amp; Filosofi</h2>
+        <p>Razen itu sosok tenang tapi nggak pasif. Dia sadar kapan harus diem, kapan harus maju. Gue percaya kalau kekuatan sejati itu bukan dari siapa yang paling keras, tapi siapa yang paling bisa ngontrol dirinya. Prinsip gue: sadar sebelum bertindak, disiplin sebelum emosi, dan diam bukan berarti lemah.</p>
+      </section>
 
-      </article>
-    </div>
+      <section id="symbolism">
+        <h2>Karakter &amp; Simbolisme</h2>
+        <p>Setiap karakter di bawah ini gue anggap punya bagian kecil dari diri gue. Mereka jadi simbol — bukan panutan sempurna, tapi cermin yang nunjukin sisi-sisi dalam diri gue yang pernah tumbuh, jatuh, dan bangkit lagi.</p>
 
-    <footer>
-      © 2025 Razenverse Archives — Proyek Persona Konseptual
-    </footer>
+        <table class="symbols">
+          <thead>
+            <tr><th>Karakter</th><th>Gambar</th><th>Makna</th><th>Kesamaan</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Kujo Jotaro (JoJo’s Bizarre Adventure)</td><td><img class="char-img" src="images/jotaro.png"></td><td>Tenang di tengah badai</td><td>Kepala dingin, nggak neko-neko</td></tr>
+            <tr><td>Simon “Ghost” Riley (Call of Duty)</td><td><img class="char-img" src="images/ghost.png"></td><td>Diam yang berbahaya</td><td>Gerak tanpa perlu ngomong banyak</td></tr>
+            <tr><td>Garou (One Punch Man)</td><td><img class="char-img" src="images/garou.png"></td><td>Perlawanan yang membentuk</td><td>Belajar dari rasa sakit</td></tr>
+            <tr><td>Itachi Uchiha (Naruto)</td><td><img class="char-img" src="images/itachi.png"></td><td>Pengorbanan dalam diam</td><td>Sadar kapan harus menyerah demi orang lain</td></tr>
+            <tr><td>Levi Ackerman (Attack on Titan)</td><td><img class="char-img" src="images/levi.png"></td><td>Efisiensi dan beban</td><td>Tenang, fokus, dan memikul diam-diam</td></tr>
+            <tr><td>Trafalgar D. Law (One Piece)</td><td><img class="char-img" src="images/law.png"></td><td>Kalkulatif & tenang</td><td>Nggak pernah bertindak tanpa perhitungan</td></tr>
+            <tr><td>Roronoa Zoro (One Piece)</td><td><img class="char-img" src="images/zoro.png"></td><td>Disiplin tanpa kompromi</td><td>Fokus dan loyal, nggak gampang goyah</td></tr>
+            <tr><td>Black Panther (Marvel)</td><td><img class="char-img" src="images/blackpanther.png"></td><td>Pelindung yang berwibawa</td><td>Tanggung jawab, empati, dan kontrol</td></tr>
+            <tr><td>Jin Kazama (Tekken)</td><td><img class="char-img" src="images/jin.png"></td><td>Pertarungan batin</td><td>Antara amarah dan tenang, kayak dua sisi koin</td></tr>
+            <tr><td>Raiden (Metal Gear)</td><td><img class="char-img" src="images/raiden.png"></td><td>Penyintas</td><td>Berubah lewat rasa sakit</td></tr>
+            <tr><td>Daniel Park (Lookism)</td><td><img class="char-img" src="images/daniel.png"></td><td>Dualitas diri</td><td>Cermin citra diri dan nilai sejati</td></tr>
+            <tr><td>Eli Jang (Lookism)</td><td><img class="char-img" src="images/eli.png"></td><td>Pelindung yang tersakiti</td><td>Kesetiaan, pengorbanan, moral jalanan</td></tr>
+            <tr><td>Tsukasa Shishio (Dr. Stone)</td><td><img class="char-img" src="images/tsukasa.png"></td><td>Kekuatan dengan idealisme</td><td>Berjuang dengan keyakinan tanpa pamrih</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="visual">
+        <h2>Catatan Visual &amp; Warna</h2>
+        <p>Gue pilih <strong>biru listrik</strong> karena warnanya ngasih kesan tenang tapi tetap hidup. Nggak nyolok, tapi punya getaran sendiri. Rambut hitam, gaya simple, aura calm predator — itu bukan gaya asal, tapi refleksi cara gue jalanin hidup: nggak banyak omong, tapi kalau bergerak, harus tepat.</p>
+        <p>Gue nggak pengen kelihatan mencolok, tapi gue pengen kalau orang liat, mereka tahu: ada sesuatu yang siap di balik diam itu. Biru, hitam, dan tenang — itu udah jadi bahasa gue sendiri.</p>
+      </section>
+
+      <section id="legacy">
+        <h2>Warisan &amp; Dampak</h2>
+        <p>Buat sebagian orang, perjalanan ini mungkin sederhana. Tapi buat gue, ini perjalanan balik ke diri sendiri. Dari marah jadi sadar, dari ribut jadi tenang. Gue pengen orang baca kisah ini dan ngerasa: lo juga bisa berubah, tanpa harus kehilangan siapa lo sebenarnya.</p>
+      </section>
+
+      <footer>
+        <div class="note">Halaman ini akan terus gue update seiring gue tumbuh. Semua karakter yang disebut di sini cuma simbol — karena tiap orang punya versi badai dan ketenangannya sendiri.</div>
+        <div class="quote-end">“Ditulis bukan buat didengar, tapi biar yang diam bisa ikut merasa.” — <strong>Razen</strong></div>
+      </footer>
+    </article>
   </div>
 </body>
-</html>
+  </html>
