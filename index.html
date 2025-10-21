@@ -1,230 +1,190 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Razenverse Archives ⚡</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Razen – The Balanced Storm</title>
 <style>
   :root {
-    --accent: #0ea5ff;
-    --muted: #666;
-    --bg: #fff;
-    --text: #111;
-    --border: #ddd;
+    --accent:#0ea5ff;
+    --muted:#6b7280;
+    --border:#e5e7eb;
+    --bg:#fff;
+    --text:#111;
   }
-  body {
-    font-family: "Georgia", "Times New Roman", serif;
-    color: var(--text);
-    background: var(--bg);
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 24px;
-    line-height: 1.7;
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,"Times New Roman",serif;
   }
-  header {
-    text-align: center;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 12px;
-    margin-bottom: 24px;
+  .wrap{
+    max-width:980px;
+    margin:28px auto;
+    padding:20px;
   }
-  header h1 {
-    font-size: 2.3em;
-    margin: 0;
+  header{
+    border-bottom:1px solid var(--border);
+    padding-bottom:12px;
   }
-  header h2 {
-    font-weight: normal;
-    font-style: italic;
-    color: var(--muted);
-    margin-top: 6px;
+  .title{font-size:32px;margin:6px 0;}
+  .subtitle{color:var(--muted);font-style:italic;margin-bottom:8px;}
+  .meta{color:var(--muted);font-size:14px;margin-bottom:12px;}
+  .content{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    flex-wrap:wrap;
   }
-
-  /* infobox */
-  .infobox {
-    float: right;
-    width: 260px;
-    margin: 8px 0 16px 24px;
-    background: #f9f9f9;
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 0.9em;
-    overflow: hidden;
+  .infobox{
+    width:280px;
+    border:1px solid var(--border);
+    background:#fbfdff;
+    padding:12px;
+    border-radius:8px;
+    flex-shrink:0;
   }
-  .infobox img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid var(--border);
+  .infobox img{
+    width:100%;
+    height:auto;
+    border-radius:6px;
+    margin-bottom:8px;
+    object-fit:cover;
   }
-  .infobox table {
-    width: 100%;
-    border-collapse: collapse;
+  .infobox table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
   }
-  .infobox td {
-    padding: 6px 8px;
-    vertical-align: top;
+  .infobox td{
+    padding:6px 4px;
+    vertical-align:top;
   }
-  .infobox td:first-child {
-    font-weight: bold;
-    color: var(--muted);
+  .infobox td:first-child{
+    color:var(--text);
+    font-weight:700;
+    width:110px;
   }
-
-  h3 {
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 4px;
-    margin-top: 40px;
+  article{flex:1;min-width:260px;}
+  blockquote{
+    border-left:4px solid var(--accent);
+    background:#f1fbff;
+    padding:12px 14px;
+    margin:18px 0;
+    border-radius:6px;
+    color:var(--accent);
+    font-weight:600;
   }
-  p {
-    margin-bottom: 16px;
+  h2{
+    font-size:18px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:8px;
+    margin-top:18px;
   }
-
-  blockquote {
-    border-left: 4px solid var(--accent);
-    background: #f3faff;
-    padding: 10px 18px;
-    margin: 20px 0;
-    color: #333;
-    font-style: italic;
+  p{margin:12px 0;}
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:12px;
+    margin-top:12px;
   }
-
-  /* Gallery */
-  .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-    margin-top: 12px;
+  .char-card{
+    border:1px solid var(--border);
+    padding:8px;
+    border-radius:8px;
+    text-align:center;
+    background:#fff;
   }
-  .gallery img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background: #fff;
+  .char-card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:8px;
   }
-  .gallery figcaption {
-    text-align: center;
-    font-size: 14px;
-    color: var(--muted);
+  footer{
+    margin-top:28px;
+    border-top:1px solid var(--border);
+    padding-top:12px;
+    color:var(--muted);
+    font-size:13px;
+    text-align:center;
   }
-
-  /* Timeline */
-  .timeline {
-    border-left: 3px solid var(--accent);
-    margin: 20px 0 40px 0;
-    padding-left: 16px;
-  }
-  .timeline-item {
-    margin-bottom: 20px;
-  }
-  .timeline-item span {
-    font-weight: bold;
-    color: var(--accent);
-  }
-
-  footer {
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 14px;
-    text-align: center;
-    margin-top: 40px;
-    padding-top: 10px;
-  }
-
-  /* Responsive tweak */
-  @media(max-width: 720px){
-    .infobox{ float:none; width:100%; margin:0 0 20px 0; }
-    header h1 { font-size:1.8em; }
+  @media(max-width:800px){
+    .content{flex-direction:column;}
+    .infobox{width:100%;}
   }
 </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <div class="title">Razen – The Balanced Storm</div>
+      <div class="subtitle">Arsip Resmi Razenverse — Profil Persona Konseptual</div>
+      <div class="meta"><strong>Usia:</strong> 19 tahun (lahir akhir 2005) • <strong>Simbol:</strong> Biru Listrik ⚡</div>
+    </header>
 
-<header>
-  <h1>Razen – The Balanced Storm ⚡</h1>
-  <h2>Razenverse Archives: A Conceptual Persona Encyclopedia Entry</h2>
-</header>
+    <div class="content">
+      <aside class="infobox" aria-label="Kotak Informasi">
+        <img src="images/razen-portrait.png" alt="Potret Razen" />
+        <table>
+          <tr><td>Nama lengkap</td><td>A.</td></tr>
+          <tr><td>Alias</td><td>The Balanced Storm</td></tr>
+          <tr><td>Profesi</td><td>Pemikir / Persona Konseptual</td></tr>
+          <tr><td>Periode</td><td>Transformasi Lockdown (2020–2021)</td></tr>
+          <tr><td>Kebangsaan</td><td>Indonesia</td></tr>
+          <tr><td>Motto</td><td><em>Keseimbangan melalui kesadaran.</em></td></tr>
+        </table>
+      </aside>
 
-<div class="infobox">
-  <img src="images/razen-portrait.png" alt="Razen portrait" />
-  <table>
-    <tr><td>Full name</td><td>A.</td></tr>
-    <tr><td>Alias</td><td>The Balanced Storm</td></tr>
-    <tr><td>Age</td><td>19 (born 2005)</td></tr>
-    <tr><td>Symbol</td><td>Electric Blue ⚡</td></tr>
-    <tr><td>Occupation</td><td>Thinker / Conceptual Persona</td></tr>
-    <tr><td>Era</td><td>Lockdown Transformation (2020–2021)</td></tr>
-    <tr><td>Origin</td><td>Indonesia</td></tr>
-  </table>
-</div>
+      <article>
+        <blockquote>"Keseimbangan bukanlah kedamaian — melainkan titik di mana kekacauan belajar disiplin." — Razen (catatan pribadi, 2025)</blockquote>
 
-<p><strong>Razen – The Balanced Storm</strong> is a semi-biographical conceptual persona representing the disciplined evolution of A., an individual who turned youthful chaos into awareness and calm precision. Razen symbolizes duality — emotion and intellect in equilibrium, power restrained by clarity, and solitude refined into focus.</p>
+        <section id="intro">
+          <h2>Pengenalan</h2>
+          <p><strong>Razen</strong> merupakan persona semi-biografis yang lahir dari refleksi pribadi A., mewakili transformasi dari emosi menuju kendali. Ia adalah lambang dari ketenangan yang sadar, kekuatan yang disembunyikan, dan keputusan yang diambil dengan perhitungan matang. Dalam dirinya, badai tidak lenyap — hanya dijinakkan.</p>
+        </section>
 
-<blockquote>
-  “Balance is not peace — it’s the point where chaos learns discipline.”  
-  — Razen (private note, 2025)
-</blockquote>
+        <section id="gallery">
+          <h2>Galeri Karakter</h2>
+          <div class="gallery">
+            <div class="char-card"><img src="images/jotaro.png" alt="Kujo Jotaro"><div>Kujo Jotaro</div></div>
+            <div class="char-card"><img src="images/ghost.png" alt="Ghost"><div>Simon "Ghost"</div></div>
+            <div class="char-card"><img src="images/blackpanther.png" alt="Black Panther"><div>Black Panther</div></div>
+            <div class="char-card"><img src="images/garou.png" alt="Garou"><div>Garou</div></div>
+            <div class="char-card"><img src="images/law.png" alt="Trafalgar Law"><div>Trafalgar Law</div></div>
+            <div class="char-card"><img src="images/zoro.png" alt="Zoro"><div>Roronoa Zoro</div></div>
+            <div class="char-card"><img src="images/itachi.png" alt="Itachi"><div>Itachi Uchiha</div></div>
+            <div class="char-card"><img src="images/jin-kazama.png" alt="Jin Kazama"><div>Jin Kazama</div></div>
+            <div class="char-card"><img src="images/levi.png" alt="Levi"><div>Levi Ackerman</div></div>
+            <div class="char-card"><img src="images/raiden.png" alt="Raiden"><div>Raiden</div></div>
+            <div class="char-card"><img src="images/daniel.png" alt="Daniel Park"><div>Daniel Park</div></div>
+            <div class="char-card"><img src="images/eli-jang.png" alt="Eli Jang"><div>Eli Jang</div></div>
+            <div class="char-card"><img src="images/tsukasa.jpg" alt="Tsukasa"><div>Tsukasa Shishio</div></div>
+          </div>
+        </section>
 
-<h3>Personality Overview</h3>
-<p>Razen embodies a paradoxical calm — the stillness before a storm. Outwardly silent, inwardly calculating, he channels emotional turbulence into controlled energy. His decisions reflect the mindset of a tactician: deliberate, composed, and purpose-driven. His demeanor echoes that of a <em>calm predator</em> — always watching, always learning.</p>
+        <section id="timeline">
+          <h2>Linimasa Perjalanan</h2>
+          <p><strong>2018–2019:</strong> Masa reaktif dan pencarian jati diri. Dikenal sebagai sosok impulsif dan keras dalam bertutur.</p>
+          <p><strong>2020–2021:</strong> Periode Transformasi Lockdown — titik balik yang menandai janji untuk berubah.</p>
+          <p><strong>2022–2024:</strong> Fase konsolidasi kesadaran. Memahami nilai tenang, mengamati sebelum bertindak.</p>
+          <p><strong>2025:</strong> Pembentukan <em>Razenverse Archives</em> sebagai simbol evolusi diri dan dokumentasi kesadaran.</p>
+        </section>
 
-<h3>Symbolism & Philosophy</h3>
-<p>The “Electric Blue” motif represents awareness through energy — clarity in motion. It mirrors A.’s fascination with storms, both literal and metaphorical: uncontrollable forces that demand respect and balance. This aesthetic underlies Razen’s creative identity as “The Balanced Storm.”</p>
+        <section id="reflections">
+          <h2>Refleksi</h2>
+          <p>Setiap manusia memiliki badai masing-masing. Pesan utama Razen bukanlah melawan badai itu, melainkan menari bersamanya — memahami ritmenya, lalu menemukan keseimbangan di tengah kekacauan. Kekuatan sejati bukanlah tentang menaklukkan dunia luar, tetapi menguasai diri sendiri.</p>
+        </section>
 
-<h3>Character Gallery</h3>
-<div class="gallery">
-  <figure>
-    <img src="images/jotaro.png" alt="Kujo Jotaro" />
-    <figcaption>Kujo Jotaro</figcaption>
-  </figure>
-  <figure>
-    <img src="images/ghost.png" alt="Ghost (Modern Warfare)" />
-    <figcaption>Ghost</figcaption>
-  </figure>
-  <figure>
-    <img src="images/law.png" alt="Trafalgar Law" />
-    <figcaption>Trafalgar Law</figcaption>
-  </figure>
-  <figure>
-    <img src="images/zoro.png" alt="Roronoa Zoro" />
-    <figcaption>Roronoa Zoro</figcaption>
-  </figure>
-  <figure>
-    <img src="images/itachi.png" alt="Itachi Uchiha" />
-    <figcaption>Itachi Uchiha</figcaption>
-  </figure>
-  <figure>
-    <img src="images/levi.png" alt="Levi Ackerman" />
-    <figcaption>Levi Ackerman</figcaption>
-  </figure>
-  <figure>
-    <img src="images/jin-kazama.png" alt="Jin Kazama" />
-    <figcaption>Jin Kazama</figcaption>
-  </figure>
-  <figure>
-    <img src="images/tsukasa.png" alt="Tsukasa Shishio" />
-    <figcaption>Tsukasa Shishio</figcaption>
-  </figure>
-</div>
+      </article>
+    </div>
 
-<h3>Timeline of Development</h3>
-<div class="timeline">
-  <div class="timeline-item">
-    <span>2018–2019:</span> Early phase marked by emotional volatility and self-confrontation. Known for impulsive speech and reactive nature.
+    <footer>
+      © 2025 Razenverse Archives — Proyek Persona Konseptual
+    </footer>
   </div>
-  <div class="timeline-item">
-    <span>2020–2021:</span> Lockdown transformation period. Promised self-reform and began personal reconstruction of identity.
-  </div>
-  <div class="timeline-item">
-    <span>2022–2024:</span> Consolidation of awareness; begins observing rather than reacting. Defined “calm predator” mindset.
-  </div>
-  <div class="timeline-item">
-    <span>2025:</span> Creation of the “Razenverse Archives” as self-documentation and symbolic evolution.
-  </div>
-</div>
-
-<h3>Reflections</h3>
-<p>Every person faces their own storm — Razen’s lesson is not about resistance but synchronization. By walking alongside chaos rather than against it, he embodies balance. His legacy exists not in perfection, but in restraint and growth.</p>
-
-<footer>© 2025 Razenverse Archives — Conceptual Persona Project</footer>
-
 </body>
 </html>
