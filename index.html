@@ -1,240 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Razen – The Balanced Storm</title>
-  <meta name="description" content="Razen – The Balanced Storm. A semi-biographical conceptual profile of A., known as Razen.">
   <style>
-    /* Wikipedia-like clean / white theme with subtle cinematic accents */
-    :root{
-      --bg:#ffffff;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --text:#0b1220;
-      --accent:#0b6cff;
-      --maxw:1000px;
-      --serif: 'Georgia', serif;
-      --sans: 'Segoe UI', Tahoma, sans-serif;
-      --border: #e6e9ee;
-    }
-    html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-    .container{max-width:var(--maxw);margin:28px auto;padding:28px;background:linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0));border-radius:6px;}
-    header{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
-    .title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--text);line-height:1.05}
-    .subtitle{color:var(--muted);font-size:14px;margin-top:4px}
-    .infobox{float:right;width:300px;background:#fbfdff;border:1px solid var(--border);padding:14px;border-radius:4px;margin-left:18px;box-shadow:0 1px 0 rgba(15,23,42,0.02)}
-    .infobox img{width:100%;height:auto;border-radius:4px;margin-bottom:10px;object-fit:cover}
-    .infobox table{width:100%;font-size:13px;color:var(--muted)}
-    h2{margin-top:24px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:8px;font-size:18px}
-    p{line-height:1.6;color:var(--text);margin:12px 0}
-    blockquote{border-left:4px solid var(--accent);margin:18px 0;padding:10px 16px;background:rgba(11,108,255,0.04);color:#0b3f8f}
-    table.symbols{width:100%;border-collapse:collapse;margin-top:12px;background:#fff}
-    table.symbols th, table.symbols td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle}
-    table.symbols th{color:var(--muted);font-weight:600;text-align:left;padding-top:12px;font-size:13px}
-    .char-img{width:110px;height:110px;object-fit:cover;border-radius:6px;background:#f4f6f8;display:block;border:1px solid var(--border)}
-    footer{margin-top:28px;border-top:1px solid var(--border);padding-top:14px;color:var(--muted);font-size:13px}
-    .note{font-size:13px;color:var(--muted);margin-top:10px}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    @media (max-width:880px){.infobox{float:none;width:100%;margin:12px 0 22px 0}}
+    body{font-family:Georgia,"Times New Roman",serif;background:#fff;color:#202122;margin:40px auto;max-width:850px;line-height:1.6}
+    h1,h2{border-bottom:1px solid #a2a9b1;padding-bottom:4px}
+    .infobox{float:right;margin:0 0 20px 20px;width:260px;border:1px solid #a2a9b1;background:#f8f9fa;padding:10px;font-size:14px}
+    .infobox img{width:100%;height:auto;border:1px solid #a2a9b1;border-radius:4px;object-fit:cover}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:20px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;border:1px solid #a2a9b1;background:#fff}
+    footer{margin-top:40px;border-top:1px solid #a2a9b1;text-align:center;font-size:13px;color:#555;padding-top:10px}
+    @media(max-width:880px){.infobox{float:none;width:100%;margin:0 0 18px 0}}
   </style>
 </head>
 <body>
-  <div class="container" role="main">
-    <header>
-      <div style="flex:1;min-width:260px">
-        <div class="title">Razen – The Balanced Storm</div>
-        <div class="subtitle">Semi-biographical conceptual profile (A.) — a living character archive and creative IP</div>
-      </div>
-      <div style="text-align:right;color:var(--muted);min-width:160px">
-        <div><strong>Age:</strong> 19 (born late 2005)</div>
-        <div style="margin-top:6px"><strong>Symbol:</strong> Electric Blue ⚡</div>
-      </div>
-    </header>
 
-    <aside class="infobox" aria-label="Infobox">
-      <!-- Replace with 'images/razen-portrait.png' when ready -->
-      <img src="images/razen-portrait.png" alt="Concept portrait of Razen" />
-      <table>
-        <tbody>
-          <tr><td><strong>Full name</strong></td><td>A.</td></tr>
-          <tr><td><strong>Alias</strong></td><td>The Balanced Storm</td></tr>
-          <tr><td><strong>Nationality</strong></td><td>Indonesian</td></tr>
-          <tr><td><strong>Occupation</strong></td><td>Thinker / Conceptual persona</td></tr>
-          <tr><td><strong>Notable era</strong></td><td>The Lockdown Transformation (2020–2021)</td></tr>
-          <tr><td><strong>Motto</strong></td><td><em>Balance through awareness</em></td></tr>
-        </tbody>
-      </table>
-    </aside>
+  <h1>Razen – The Balanced Storm</h1>
+  <p><em>Semi-biographical conceptual profile (A.) — a living character archive and creative IP</em></p>
+  <p><strong>Age:</strong> 19 (born late 2005)<br>
+     <strong>Symbol:</strong> Electric Blue ⚡</p>
 
-    <article>
-      <section>
-        <blockquote>
-          "Balance is not peace — it’s the point where chaos learns discipline." — Razen (private note, 2025)
-        </blockquote>
-      </section>
+  <aside class="infobox" aria-label="Infobox">
+    <img src="images/razen-portrait.png" alt="Concept portrait of Razen" />
+    <table>
+      <tbody>
+        <tr><td><strong>Full name</strong></td><td>A.</td></tr>
+        <tr><td><strong>Alias</strong></td><td>The Balanced Storm</td></tr>
+        <tr><td><strong>Nationality</strong></td><td>Indonesian</td></tr>
+        <tr><td><strong>Occupation</strong></td><td>Thinker / Conceptual persona</td></tr>
+        <tr><td><strong>Notable era</strong></td><td>The Lockdown Transformation (2020–2021)</td></tr>
+        <tr><td><strong>Motto</strong></td><td><em>Balance through awareness</em></td></tr>
+      </tbody>
+    </table>
+  </aside>
 
-      <section id="introduction">
-        <h2>Introduction</h2>
-        <p><strong>Razen – The Balanced Storm</strong> is a semi-autobiographical conceptual persona representing A., an Indonesian individual known for his reflective evolution from impulsive youth to emotionally controlled and self-aware adulthood. Recognized for a calm yet analytical demeanor, Razen’s philosophy combines resilience, empathy, and self-discipline — forming <em>calm predation</em>, the art of containing strength rather than showcasing it.</p>
-      </section>
+  <blockquote>
+    “Balance is not peace — it’s the point where chaos learns discipline.” — Razen (private note, 2025)
+  </blockquote>
 
-      <section id="early-life">
-        <h2>Early life</h2>
-        <p>A. was born in Indonesia in late 2005. During his secondary education years he exhibited outspoken and reactive behavior, later reflecting on this period as 'toxic'—a defensive posture born from insecurity. A passing positive comment on a social post became a catalytic memory that inspired an early promise to change and rebuild character.</p>
-      </section>
+  <h2>Introduction</h2>
+  <p><strong>Razen – The Balanced Storm</strong> is a semi-autobiographical conceptual persona representing A., an Indonesian individual known for his reflective evolution from impulsive youth to emotionally controlled and self-aware adulthood. Recognized for a calm yet analytical demeanor, Razen’s philosophy combines resilience, empathy, and self-discipline — forming <em>calm predation</em>, the art of containing strength rather than showcasing it.</p>
 
-      <section id="turning-point">
-        <h2>Turning point — The Lockdown Era (2020–2021)</h2>
-        <p>The global COVID-19 lockdown served as Razen’s emotional crucible. Following extended isolation he experienced two formative relationships: <strong>A.</strong> (first inspiration) and <strong>L.</strong> (secondary experience). These connections exposed him to vulnerability and rejection, and ultimately taught the principle that kindness must persist even when unseen.</p>
-      </section>
-
-      <section id="vocational">
-        <h2>Evolution through vocational years (2021–2024)</h2>
-        <p>During his vocational phase, A. enacted his promise: removing toxic language, cultivating discipline, and adopting a quiet, functional strength. Notable symbolic acts — such as assisting with graduation cleanup tasks — became local markers of his emerging maturity: strength used for purpose rather than attention.</p>
-      </section>
-
-      <section id="personality">
-        <h2>Personality &amp; Philosophy</h2>
-        <p>Razen is introspective, disciplined, and fiercely rational. He values clarity over chaos and defines strength as the capacity to feel deeply while remaining composed. His core tenets are: awareness before action; discipline over reaction; and silence as power. He describes himself as a 'calm predator'—a person who contains force rather than displaying it.</p>
-      </section>
-
-      <section id="fictional-symbolism">
-        <h2>Fictional Symbolism &amp; Psychological Parallels</h2>
-        <p>This extended symbolic framework links Razen’s psychology to themes of identity, trauma, discipline, and stoic guardianship through references across contemporary fiction.</p>
-
-        <table class="symbols" aria-describedby="symbol-table">
-          <thead>
-            <tr>
-              <th>Character</th>
-              <th>Image</th>
-              <th>Symbolic role</th>
-              <th>Shared traits</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Kujo Jotaro (JoJo’s Bizarre Adventure)</td>
-              <td><img class="char-img" src="images/jotaro.png" alt="Kujo Jotaro - Silent Guardian"></td>
-              <td>The silent guardian</td>
-              <td>Controlled emotion, tactical composure, protective strength</td>
-            </tr>
-
-            <tr>
-              <td>Simon “Ghost” Riley (Call of Duty)</td>
-              <td><img class="char-img" src="images/ghost.png" alt="Simon Ghost Riley - Unseen Operator"></td>
-              <td>The unseen operator</td>
-              <td>Precision, hidden depth, tactical silence</td>
-            </tr>
-
-            <tr>
-              <td>Garou (One Punch Man)</td>
-              <td><img class="char-img" src="images/garou.png" alt="Garou - Evolving Fighter"></td>
-              <td>The evolving fighter</td>
-              <td>Constant self-growth through resistance</td>
-            </tr>
-
-            <tr>
-              <td>Itachi Uchiha (Naruto)</td>
-              <td><img class="char-img" src="images/itachi.png" alt="Itachi Uchiha - The Wise Outcast"></td>
-              <td>The wise outcast</td>
-              <td>Moral restraint, emotional control</td>
-            </tr>
-
-            <tr>
-              <td>Levi Ackerman (Attack on Titan)</td>
-              <td><img class="char-img" src="images/levi.png" alt="Levi Ackerman - Efficient Soldier"></td>
-              <td>The efficient soldier</td>
-              <td>Stoicism, inner burden, lethal efficiency</td>
-            </tr>
-
-            <tr>
-              <td>Black Panther (T'Challa) (Marvel)</td>
-              <td><img class="char-img" src="images/blackpanther.png" alt="Black Panther - Regal Protector"></td>
-              <td>The regal protector</td>
-              <td>Balance between duty and compassion</td>
-            </tr>
-
-            <tr>
-              <td>Jin Kazama (Tekken)</td>
-              <td><img class="char-img" src="images/jin.png" alt="Jin Kazama - The Cursed Inheritor"></td>
-              <td>The cursed inheritor</td>
-              <td>Inner struggle between calm and rage</td>
-            </tr>
-
-            <tr>
-              <td>Raiden (Metal Gear)</td>
-              <td><img class="char-img" src="images/raiden.png" alt="Raiden - Survivor"></td>
-              <td>The survivor</td>
-              <td>Reinvention through trauma</td>
-            </tr>
-
-            <tr>
-              <td>Daniel Park (Lookism)</td>
-              <td><img class="char-img" src="images/daniel.png" alt="Daniel Park - Youthful Duality"></td>
-              <td>The mirror of self-image</td>
-              <td>Dual identity, search for true worth</td>
-            </tr>
-
-            <tr>
-              <td>Eli Jang (Lookism)</td>
-              <td><img class="char-img" src="images/eli.png" alt="Eli Jang - Protector"></td>
-              <td>The protector through pain</td>
-              <td>Loyalty, sacrifice, street morality</td>
-            </tr>
-
-            <tr>
-              <td>Trafalgar D. Law (One Piece)</td>
-              <td><img class="char-img" src="images/law.png" alt="Trafalgar D. Law - Surgical Thinker"></td>
-              <td>The surgical thinker</td>
-              <td>Cold rationality, trauma control, strategist</td>
-            </tr>
-
-            <tr>
-              <td>Roronoa Zoro (One Piece) — public image reference</td>
-              <td><img class="char-img" src="images/zoro.png" alt="Roronoa Zoro - Disciplinarian"></td>
-              <td>The disciplinarian warrior</td>
-              <td>Discipline, loyalty, focused strength</td>
-            </tr>
-
-            <tr>
-              <td>Tsukasa Shishio (Dr. Stone)</td>
-              <td><img class="char-img" src="images/tsukasa.png" alt="Tsukasa Shishio - Idealistic Challenger"></td>
-              <td>The idealistic challenger</td>
-              <td>Physical might, uncompromising ideals</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <p style="margin-top:12px;font-style:italic;color:var(--muted)">In this extended symbolic framework, Razen’s psyche bridges modern dualities — self-image and survival, empathy and detachment — aligning his moral evolution with both urban realism and stoic discipline.</p>
-      </section>
-
-      <section id="core-traits">
-        <h2>Core traits</h2>
-        <p>Observant, loyal, analytical, emotionally restrained yet deeply feeling, persistent, morally grounded, independent. Often described as "a strategist trapped in a poet's body." Communication is minimalist but impactful.</p>
-      </section>
-
-      <section id="quotes">
-        <h2>Quotes &amp; core beliefs</h2>
-        <p>“I evolve not to win — but to never lose myself again.”<br>“Peace is not quiet; it’s the strength to stand still when everything shakes.”</p>
-      </section>
-
-      <section id="legacy">
-        <h2>Legacy &amp; impact</h2>
-        <p>Razen’s narrative is viewed as a modern coming-of-age arc rooted in realism. His transformation from anger to discipline resonates with audiences seeking authenticity in the digital age. The term "Calm Revolution" has been informally used to describe those who choose balance over chaos.</p>
-      </section>
-
-      <footer>
-        <div class="note">This page is continuously updated following the personal growth of A., known as Razen. All names and symbolic characters are referenced for interpretive and creative purposes.</div>
-        <div style="margin-top:8px">External references &amp; further reading:</div>
-        <ul style="color:var(--muted);margin-top:8px">
-          <li><a href="https://en.wikipedia.org/wiki/Razen_(The_Balanced_Storm)">https://en.wikipedia.org/wiki/Razen_(The_Balanced_Storm)</a></li>
-          <li><a href="https://fandomverse.fictionalbio.com/razen-balancedstorm-profile">https://fandomverse.fictionalbio.com/razen-balancedstorm-profile</a></li>
-          <li><a href="https://balancedstorm.medium.com">https://balancedstorm.medium.com</a></li>
-        </ul>
-      </footer>
-    </article>
+  <h2>Character Gallery</h2>
+  <div class="gallery" aria-label="Character gallery">
+    <img src="images/jotaro.png" alt="Kujo Jotaro" />
+    <img src="images/ghost.png" alt="Ghost (Modern Warfare)" />
+    <img src="images/blackpanther.png" alt="Black Panther" />
+    <img src="images/garou.png" alt="Garou" />
+    <img src="images/law.png" alt="Trafalgar Law" />
+    <img src="images/zoro.png" alt="Roronoa Zoro" />
+    <img src="images/itachi.png" alt="Itachi Uchiha" />
+    <img src="images/levi.png" alt="Levi Ackerman" />
+    <img src="images/jin-kazama.png" alt="Jin Kazama" />
+    <img src="images/raiden.png" alt="Raiden" />
+    <img src="images/daniel.png" alt="Daniel Park" />
+    <img src="images/eli-jang.png" alt="Eli Jang" />
+    <img src="images/tsukasa.jpg" alt="Tsukasa Shishio" />
   </div>
+
+  <footer>© 2025 Razenverse Archives — conceptual persona project</footer>
 </body>
-                                                          </html>
+</html>
