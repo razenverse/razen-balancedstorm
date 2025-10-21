@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Razenverse Archives – Badai yang Seimbang</title>
-  <meta name="description" content="Razenverse Archives. Catatan hidup, refleksi, dan simbolisme karakter dari Razen.">
+  <title>Razenverse Archives | The Balanced Storm</title>
+  <meta name="description" content="Razenverse Archives — personal record and reflective archive of A., known as Razen.">
   <style>
     :root{
       --bg:#ffffff;
@@ -15,138 +15,367 @@
       --maxw:1000px;
       --serif:'Georgia',serif;
       --sans:'Segoe UI',Tahoma,sans-serif;
+      --infobox-bg:#fbfdff;
+      --card-bg:#ffffff;
+      --char-bg:#f4f6f8;
     }
-    html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+    /* Dark mode (neutral) variables */
+    .dark {
+      --bg:#121317;
+      --muted:#9aa3ad;
+      --text:#e6eef8;
+      --accent:#61a8ff;
+      --border:#22262a;
+      --infobox-bg:#16171a;
+      --card-bg:#151617;
+      --char-bg:#1b1d20;
+    }
+
+    html,body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      -webkit-font-smoothing:antialiased;
+      scroll-behavior:smooth;
+    }
     .container{max-width:var(--maxw);margin:28px auto;padding:28px;}
-    .logo{text-align:center;letter-spacing:3px;text-transform:uppercase;font-weight:700;font-size:22px;color:#0b1220;
-      border-bottom:2px solid var(--border);padding-bottom:8px;margin-bottom:24px;}
-    .logo span{color:var(--accent);font-weight:800;text-shadow:0 0 6px rgba(11,108,255,0.3);}
-    .logo-sub{text-align:center;color:var(--muted);font-size:13px;margin-top:-12px;letter-spacing:1px;text-transform:uppercase;}
-    header{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap}
-    .title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--text)}
+    .logo{
+      text-align:center;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-weight:700;
+      font-size:22px;
+      color:var(--text);
+      border-bottom:2px solid var(--border);
+      padding-bottom:8px;
+      margin-bottom:18px;
+      background:transparent;
+    }
+    .logo span{color:var(--accent);font-weight:800;text-shadow:0 0 6px rgba(97,168,255,0.08)}
+    .logo-sub{text-align:center;color:var(--muted);font-size:12px;margin-top:6px;letter-spacing:1px;text-transform:uppercase}
+    
+    /* top-right toggle */
+    .topbar{display:flex;justify-content:flex-end;align-items:center;gap:12px;margin-bottom:8px}
+    .toggle-btn{
+      background:transparent;
+      border:1px solid var(--border);
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:6px;
+      cursor:pointer;
+      font-size:13px;
+      transition:background .2s, color .2s, border-color .2s;
+    }
+    .toggle-btn:hover{background:rgba(0,0,0,0.04)}
+    .dark .toggle-btn{border-color:var(--border); color:var(--muted); background:transparent}
+    
+    header{display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;margin-top:8px}
+    .title{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--text)}
     .subtitle{color:var(--muted);font-size:14px;margin-top:4px}
-    .infobox{float:right;width:300px;background:#fbfdff;border:1px solid var(--border);padding:14px;border-radius:4px;margin-left:18px;}
-    .infobox img{width:100%;height:auto;border-radius:4px;margin-bottom:10px}
+    
+    .infobox{
+      float:right;
+      width:300px;
+      background:var(--infobox-bg);
+      border:1px solid var(--border);
+      padding:14px;
+      border-radius:6px;
+      margin-left:18px;
+      box-shadow:0 1px 0 rgba(11,12,15,0.02);
+    }
+    .infobox img{width:100%;height:auto;border-radius:6px;margin-bottom:10px;object-fit:cover}
     .infobox table{width:100%;font-size:13px;color:var(--muted)}
-    h2{margin-top:24px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:8px;font-size:18px}
-    p{line-height:1.6;margin:12px 0}
-    blockquote{border-left:4px solid var(--accent);margin:18px 0;padding:10px 16px;background:rgba(11,108,255,0.05);color:#0b3f8f}
-    table.symbols{width:100%;border-collapse:collapse;margin-top:12px;background:#fff}
-    table.symbols th, table.symbols td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle}
-    table.symbols th{color:var(--muted);font-weight:600;text-align:left;font-size:13px}
-    .char-img{width:110px;height:110px;object-fit:cover;border-radius:6px;border:1px solid var(--border)}
+    
+    h2{margin-top:28px;color:var(--text);border-bottom:1px solid var(--border);padding-bottom:8px;font-size:18px}
+    p{line-height:1.65;margin:12px 0;color:var(--text)}
+    
+    blockquote{border-left:4px solid var(--accent);margin:18px 0;padding:12px 16px;background:rgba(11,108,255,0.03);color:var(--accent);font-weight:600}
+    
+    table.symbols{width:100%;border-collapse:collapse;margin-top:12px;background:var(--card-bg)}
+    table.symbols th, table.symbols td{padding:10px;border-bottom:1px solid var(--border);vertical-align:middle;text-align:left}
+    table.symbols th{color:var(--muted);font-weight:600;font-size:13px}
+    .char-img{width:110px;height:110px;object-fit:cover;border-radius:6px;border:1px solid var(--border);background:var(--char-bg);display:block}
+    
     footer{margin-top:28px;border-top:1px solid var(--border);padding-top:14px;color:var(--muted);font-size:13px}
-    .quote-end{margin-top:18px;font-style:italic;color:#0b3f8f;text-align:center;font-size:14px}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    @media(max-width:880px){.infobox{float:none;width:100%;margin:12px 0 22px 0}}
+    .note{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .quote-end{margin-top:18px;font-style:italic;color:var(--accent);text-align:center;font-size:14px}
+    .toc{margin:18px 0;padding:8px 12px;border:1px solid var(--border);background:var(--infobox-bg);border-radius:6px;color:var(--muted);font-size:13px}
+    .toc a{margin-right:12px;color:var(--accent);text-decoration:none}
+    .toc a:hover{text-decoration:underline}
+    
+    /* reveal animation */
+    .reveal{opacity:0;transform:translateY(12px);transition:all 560ms cubic-bezier(.2,.9,.3,1)}
+    .reveal.show{opacity:1;transform:none}
+    
+    @media(max-width:880px){
+      .infobox{float:none;width:100%;margin:12px 0 22px 0}
+      .topbar{justify-content:flex-end}
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    
+  <div class="container" id="page">
+    <div class="topbar">
+      <button id="toggleTheme" class="toggle-btn" aria-pressed="false">🌙 Dark Mode</button>
+    </div>
+
     <div class="logo">RAZENVERSE <span>ARCHIVES</span></div>
     <div class="logo-sub">Personal Record • Project Balance</div>
 
-    <header>
+    <header class="reveal">
       <div style="flex:1;min-width:260px">
-        <div class="title">Razen – Badai yang Seimbang</div>
-        <div class="subtitle">Catatan hidup dan persona konseptual — perjalanan menuju keseimbangan diri</div>
+        <div class="title">Razen — The Balanced Storm</div>
+        <div class="subtitle">Catatan hidup, refleksi, dan arsip personal seorang A. yang memilih tenang sebagai strategi.</div>
       </div>
       <div style="text-align:right;color:var(--muted);min-width:160px">
-        <div><strong>Usia:</strong> 19 tahun (lahir akhir 2005)</div>
-        <div style="margin-top:6px"><strong>Simbol:</strong> Biru Listrik ⚡</div>
+        <div><strong>Age:</strong> 19 (born late 2005)</div>
+        <div style="margin-top:6px"><strong>Symbol:</strong> Electric Blue ⚡</div>
       </div>
     </header>
 
-    <aside class="infobox">
-      <img src="images/razen-portrait.png" alt="Potret Razen" />
+    <aside class="infobox reveal" aria-label="Infobox">
+      <img src="images/razen-portrait.png" alt="Potret Razen — conceptual portrait" />
       <table>
         <tbody>
-          <tr><td><strong>Nama</strong></td><td>A.</td></tr>
-          <tr><td><strong>Alias</strong></td><td>Badai yang Seimbang</td></tr>
-          <tr><td><strong>Kebangsaan</strong></td><td>Indonesia</td></tr>
-          <tr><td><strong>Periode Penting</strong></td><td>Transformasi Lockdown (2020–2021)</td></tr>
-          <tr><td><strong>Motto</strong></td><td><em>Keseimbangan lewat kesadaran.</em></td></tr>
+          <tr><td><strong>Name</strong></td><td>A.</td></tr>
+          <tr><td><strong>Alias</strong></td><td>The Balanced Storm</td></tr>
+          <tr><td><strong>Nationality</strong></td><td>Indonesia</td></tr>
+          <tr><td><strong>Notable era</strong></td><td>Lockdown Transformation (2020–2021)</td></tr>
+          <tr><td><strong>Motto</strong></td><td><em>Balance through awareness.</em></td></tr>
         </tbody>
       </table>
     </aside>
 
+    <div class="toc reveal">
+      <strong>Sections:</strong>
+      <a href="#intro">Introduction</a>
+      <a href="#early-life">Early life</a>
+      <a href="#turning-point">Turning point</a>
+      <a href="#vocational">Growth</a>
+      <a href="#personality">Philosophy</a>
+      <a href="#symbolism">Symbolism</a>
+      <a href="#visual">Visual notes</a>
+      <a href="#legacy">Legacy</a>
+    </div>
+
     <article>
-      <section>
-        <blockquote>
-          “Keseimbangan bukan berarti tenang — tapi momen di mana kekacauan akhirnya nurut sama lo.”  
-          — Razen, 2025
-        </blockquote>
+      <!-- SECTION 1: INTRO -->
+      <section id="intro" class="reveal">
+        <blockquote>“Dulu gue pikir tenang itu tanda lemah. Sekarang gue tahu, justru di diam, badai belajar tunduk.” — Razen, 2025</blockquote>
+        <h2>Introduction</h2>
+        <p>Gue nggak nulis ini buat minta simpati. Gue nulis ini karena ada yang mungkin butuh tahu: tenang itu proses, bukan hadiah. Ini bukan daftar pencapaian — ini arsip kecil tentang gimana seseorang belajar menahan, belajar memilih, dan akhirnya menemukan bentuk kekuatan yang nggak perlu teriak.</p>
+        <p>Buat yang baca: kalau lo pernah diam padahal pengen ngomong, semoga halaman ini ngasih sedikit peta — bukan jawaban instan, tapi arah yang mungkin lo butuh waktu buat ikutin.</p>
       </section>
 
-      <section id="intro">
-        <h2>Pengenalan</h2>
-        <p><strong>Razen</strong> bukan cuma persona, tapi refleksi dari perjalanan gue sendiri. Dari bocah yang gampang kebawa emosi, ngomong sembarangan, sampai akhirnya sadar kalau hidup itu soal kendali. Gue belajar, diam bukan berarti kalah. Kadang justru itu bentuk kekuatan paling tinggi.</p>
+      <!-- SECTION 2: EARLY LIFE -->
+      <section id="early-life" class="reveal">
+        <h2>Early life</h2>
+        <p>Waktu kecil gue sering ngomong dulu, baru mikir. Kata-kata dulu jadi perisai buat nutup rasa nggak aman. Ada fase di mana gue bangga sama mulut yang galak — sampai satu hari gue liat dampaknya: orang mundur, bukan ngadep. Itu bikin gue mikir ulang. Perubahan pertama gue bukan dramatis; itu janji kecil yang gue ucapkan sendiri: <em>aku bakal beda</em>. Itu start dari niat, bukan seremoni.</p>
+        <p>Masa-masa sekolah itu keras: lo belajar banyak soal orang lain lewat pertemanan, komentar, dan urusan sehari-hari. Dari situ tumbuh rasa tanggung jawab kecil yang kelak jadi pondasi—bahwa kata-kata punya efek, dan lo berhak memilih bagaimana ngasih efek itu.</p>
       </section>
 
-      <section id="early-life">
-        <h2>Masa Awal</h2>
-        <p>Gue lahir di Indonesia, akhir tahun 2005. Dulu gue reaktif banget, bawaannya pengen menang debat terus. Tapi dari hal kecil — kayak komentar positif random dari orang di internet — gue sadar, hal sekecil itu bisa nyentuh banget. Dari situ gue janji ke diri sendiri: gue bakal berubah. Pelan, tapi pasti.</p>
+      <!-- SECTION 3: TURNING POINT (Lockdown + soft personal touch) -->
+      <section id="turning-point" class="reveal">
+        <h2>Turning point — The Lockdown Era</h2>
+        <p>Ketika dunia direm oleh pandemi, hidup gue malah mulai bergerak ke arah lain — ke dalam. Kesunyian memaksa gue denger suara gue sendiri, dan kadang suara itu nggak enak didenger. Di masa itu datang orang-orang singkat: mereka hadir, mengajarkan, lalu pergi. Beberapa momen ninggalin bekas yang tajam, tapi bukan untuk dibuka lagi di depan umum — cukup jadi tanda bahwa hati ini butuh latihan.</p>
+        <p>Ada saat gue ngerasa kehilangan arah karena harapan yang nggak berbalas. Rasanya hampa, dan entah kenapa ada lagu yang pas banget sama mood itu — sebuah momen yang bikin gue sadar: menikmati rasa sakit nggak membuatmu lemah, itu ngasihmu bahan buat jadi lebih tangguh. Dari situ gue belajar, melepaskan bukan berarti lupa; melepaskan adalah memberi ruang buat bangun.</p>
+        <p>Intinya: masa-masa itu ngajar gue satu pelajaran sederhana—beberapa hubungan bukan untuk dimiliki selamanya, tapi cukup untuk membentuk siapa lo nanti.</p>
       </section>
 
-      <section id="turning-point">
-        <h2>Titik Balik — Era Lockdown</h2>
-        <p>Waktu lockdown, hidup gue kayak direm total. Di masa itu gue kenal sama dua orang — sebut aja <strong>Si A</strong> dan <strong>Si L</strong>. Dua-duanya ninggalin jejak kuat. Ada rasa yang gagal, ada pelajaran yang nyangkut. Tapi gue belajar satu hal: kebaikan nggak harus dibales buat tetep pantas dijaga.</p>
+      <!-- SECTION 4: VOCATIONAL / GROWTH -->
+      <section id="vocational" class="reveal">
+        <h2>Growth — Vocational years & small acts</h2>
+        <p>Setelah janji itu, gue nggak langsung berubah jadi sempurna. Perubahan kerjanya lambat dan seringkali terlihat sepele: nahan kata kasar, bantuin orang tanpa pengakuan, lebih fokus kerja daripada gaya. Waktu SMK, gue sering kerja yang kotor dan susah—bukan buat nunjukin siapa gue, tapi karena itu yang harus dilakukan. Tindakan-tindakan kecil itu yang ngebentuk integritas yang nyata.</p>
+        <p>Bahkan hal sederhana — angkat meja waktu acara kelulusan, bantu beres-beres, ngerjain tugas sampai baju robek — itu bukan soal pamer kekuatan. Itu soal bukti: kekuatan yang dipakai untuk tujuan, bukan untuk panggung.</p>
       </section>
 
-      <section id="vocational">
-        <h2>Fase Pertumbuhan (2021–2024)</h2>
-        <p>Masuk fase baru, gue mulai benerin diri. Nahan kata-kata kasar, belajar tenang, belajar mikir dulu baru gerak. Gue juga mulai ngerti gimana rasanya kerja keras tanpa mikirin gengsi. Selama lo ngerjain sesuatu dengan hati, kotor, lelah, atau robek pun rasanya tetep berarti.</p>
+      <!-- SECTION 5: PERSONALITY & PHILOSOPHY -->
+      <section id="personality" class="reveal">
+        <h2>Personality &amp; Philosophy</h2>
+        <p>Gue nyebut diri gue “calm predator” bukan karena mau terlihat garang. Itu deskripsi singkat buat cara gue beroperasi: tenang, terukur, tapi siap ketika harus bertindak. Filosofi gue sederhana — sadar dulu, gerak kemudian. Disiplin lebih penting daripada ledakan emosi. Diam itu alat; bukan label kelemahan.</p>
+        <p>Kode personal gue: jangan cari perhatian, biarkan hasil yang berbicara. Bukan untuk menyombong, tetapi untuk menjaga energi. Kalau lo bisa mengatur energi sendiri, lo lebih efektif ngasih pengaruh ketimbang teriak paling keras di ruangan.</p>
       </section>
 
-      <section id="personality">
-        <h2>Kepribadian &amp; Filosofi</h2>
-        <p>Razen itu sosok tenang tapi nggak pasif. Dia sadar kapan harus diem, kapan harus maju. Gue percaya kalau kekuatan sejati itu bukan dari siapa yang paling keras, tapi siapa yang paling bisa ngontrol dirinya. Prinsip gue: sadar sebelum bertindak, disiplin sebelum emosi, dan diam bukan berarti lemah.</p>
-      </section>
+      <!-- SECTION 6: SYMBOLISM / CHARACTER PARALLELS -->
+      <section id="symbolism" class="reveal">
+        <h2>Character &amp; Symbolism</h2>
+        <p>Dalam kepala gue, ada potongan-potongan figur fiksi yang bantu jelasin sisi-sisi gue. Mereka bukan panutan sempurna — mereka cermin. Berikut ringkasan singkat kenapa tiap karakter terasa penting buat bagian diri gue:</p>
 
-      <section id="symbolism">
-        <h2>Karakter &amp; Simbolisme</h2>
-        <p>Setiap karakter di bawah ini gue anggap punya bagian kecil dari diri gue. Mereka jadi simbol — bukan panutan sempurna, tapi cermin yang nunjukin sisi-sisi dalam diri gue yang pernah tumbuh, jatuh, dan bangkit lagi.</p>
-
-        <table class="symbols">
+        <table class="symbols" aria-describedby="symbol-table">
           <thead>
-            <tr><th>Karakter</th><th>Gambar</th><th>Makna</th><th>Kesamaan</th></tr>
+            <tr><th>Character</th><th>Image</th><th>Symbolic role</th><th>Shared traits</th></tr>
           </thead>
           <tbody>
-            <tr><td>Kujo Jotaro (JoJo’s Bizarre Adventure)</td><td><img class="char-img" src="images/jotaro.png"></td><td>Tenang di tengah badai</td><td>Kepala dingin, nggak neko-neko</td></tr>
-            <tr><td>Simon “Ghost” Riley (Call of Duty)</td><td><img class="char-img" src="images/ghost.png"></td><td>Diam yang berbahaya</td><td>Gerak tanpa perlu ngomong banyak</td></tr>
-            <tr><td>Garou (One Punch Man)</td><td><img class="char-img" src="images/garou.png"></td><td>Perlawanan yang membentuk</td><td>Belajar dari rasa sakit</td></tr>
-            <tr><td>Itachi Uchiha (Naruto)</td><td><img class="char-img" src="images/itachi.png"></td><td>Pengorbanan dalam diam</td><td>Sadar kapan harus menyerah demi orang lain</td></tr>
-            <tr><td>Levi Ackerman (Attack on Titan)</td><td><img class="char-img" src="images/levi.png"></td><td>Efisiensi dan beban</td><td>Tenang, fokus, dan memikul diam-diam</td></tr>
-            <tr><td>Trafalgar D. Law (One Piece)</td><td><img class="char-img" src="images/law.png"></td><td>Kalkulatif & tenang</td><td>Nggak pernah bertindak tanpa perhitungan</td></tr>
-            <tr><td>Roronoa Zoro (One Piece)</td><td><img class="char-img" src="images/zoro.png"></td><td>Disiplin tanpa kompromi</td><td>Fokus dan loyal, nggak gampang goyah</td></tr>
-            <tr><td>Black Panther (Marvel)</td><td><img class="char-img" src="images/blackpanther.png"></td><td>Pelindung yang berwibawa</td><td>Tanggung jawab, empati, dan kontrol</td></tr>
-            <tr><td>Jin Kazama (Tekken)</td><td><img class="char-img" src="images/jin.png"></td><td>Pertarungan batin</td><td>Antara amarah dan tenang, kayak dua sisi koin</td></tr>
-            <tr><td>Raiden (Metal Gear)</td><td><img class="char-img" src="images/raiden.png"></td><td>Penyintas</td><td>Berubah lewat rasa sakit</td></tr>
-            <tr><td>Daniel Park (Lookism)</td><td><img class="char-img" src="images/daniel.png"></td><td>Dualitas diri</td><td>Cermin citra diri dan nilai sejati</td></tr>
-            <tr><td>Eli Jang (Lookism)</td><td><img class="char-img" src="images/eli.png"></td><td>Pelindung yang tersakiti</td><td>Kesetiaan, pengorbanan, moral jalanan</td></tr>
-            <tr><td>Tsukasa Shishio (Dr. Stone)</td><td><img class="char-img" src="images/tsukasa.png"></td><td>Kekuatan dengan idealisme</td><td>Berjuang dengan keyakinan tanpa pamrih</td></tr>
+            <tr>
+              <td>Kujo Jotaro (JoJo’s Bizarre Adventure)</td>
+              <td><img class="char-img" src="images/jotaro.png" alt="Jotaro"></td>
+              <td>Silent guardian</td>
+              <td>Controlled emotion, tactical composure</td>
+            </tr>
+            <tr>
+              <td>Simon "Ghost" Riley (Call of Duty)</td>
+              <td><img class="char-img" src="images/ghost.png" alt="Ghost"></td>
+              <td>Unseen operator</td>
+              <td>Precision, hidden depth, tactical silence</td>
+            </tr>
+            <tr>
+              <td>Garou (One Punch Man)</td>
+              <td><img class="char-img" src="images/garou.png" alt="Garou"></td>
+              <td>Evolving fighter</td>
+              <td>Growth through resistance</td>
+            </tr>
+            <tr>
+              <td>Itachi Uchiha (Naruto)</td>
+              <td><img class="char-img" src="images/itachi.png" alt="Itachi"></td>
+              <td>Wise outcast</td>
+              <td>Moral restraint, emotional control</td>
+            </tr>
+            <tr>
+              <td>Levi Ackerman (Attack on Titan)</td>
+              <td><img class="char-img" src="images/levi.png" alt="Levi"></td>
+              <td>Efficient soldier</td>
+              <td>Stoicism, inner burden, lethal efficiency</td>
+            </tr>
+            <tr>
+              <td>Trafalgar D. Law (One Piece)</td>
+              <td><img class="char-img" src="images/law.png" alt="Law"></td>
+              <td>Surgical thinker</td>
+              <td>Cold rationality, strategic depth</td>
+            </tr>
+            <tr>
+              <td>Roronoa Zoro (One Piece)</td>
+              <td><img class="char-img" src="images/zoro.png" alt="Zoro"></td>
+              <td>Disciplined warrior</td>
+              <td>Focus, loyalty, relentless training</td>
+            </tr>
+            <tr>
+              <td>Black Panther (Marvel)</td>
+              <td><img class="char-img" src="images/blackpanther.png" alt="Black Panther"></td>
+              <td>Regal protector</td>
+              <td>Balance of duty and empathy</td>
+            </tr>
+            <tr>
+              <td>Jin Kazama (Tekken)</td>
+              <td><img class="char-img" src="images/jin.png" alt="Jin"></td>
+              <td>Cursed inheritor</td>
+              <td>Inner conflict between calm and rage</td>
+            </tr>
+            <tr>
+              <td>Raiden (Metal Gear)</td>
+              <td><img class="char-img" src="images/raiden.png" alt="Raiden"></td>
+              <td>Survivor / Reinventor</td>
+              <td>Reinvention through trauma</td>
+            </tr>
+            <tr>
+              <td>Daniel Park (Lookism)</td>
+              <td><img class="char-img" src="images/daniel.png" alt="Daniel Park"></td>
+              <td>Mirror of self-image</td>
+              <td>Dual identity, search for worth</td>
+            </tr>
+            <tr>
+              <td>Eli Jang (Lookism)</td>
+              <td><img class="char-img" src="images/eli.png" alt="Eli Jang"></td>
+              <td>Hardened protector</td>
+              <td>Loyalty, sacrifice, street morality</td>
+            </tr>
+            <tr>
+              <td>Tsukasa Shishio (Dr. Stone)</td>
+              <td><img class="char-img" src="images/tsukasa.png" alt="Tsukasa"></td>
+              <td>Idealistic challenger</td>
+              <td>Physical might, uncompromising ideals</td>
+            </tr>
+            <tr>
+              <td>Gojo Satoru (Jujutsu Kaisen)</td>
+              <td><img class="char-img" src="images/gojo.png" alt="Gojo"></td>
+              <td>Calm infinity</td>
+              <td>Absolute confidence balanced with playful restraint</td>
+            </tr>
+            <tr>
+              <td>Denji (Chainsaw Man)</td>
+              <td><img class="char-img" src="images/denji.png" alt="Denji"></td>
+              <td>Rough freedom</td>
+              <td>Crude survival instinct, raw honesty</td>
+            </tr>
           </tbody>
         </table>
+
+        <p style="margin-top:12px;font-style:italic;color:var(--muted)">These parallels are not endorsements — they are lenses. Each figure helps map a facet of how I understand myself: restraint, reinvention, loyalty, and the quiet work of becoming.</p>
       </section>
 
-      <section id="visual">
-        <h2>Catatan Visual &amp; Warna</h2>
-        <p>Gue pilih <strong>biru listrik</strong> karena warnanya ngasih kesan tenang tapi tetap hidup. Nggak nyolok, tapi punya getaran sendiri. Rambut hitam, gaya simple, aura calm predator — itu bukan gaya asal, tapi refleksi cara gue jalanin hidup: nggak banyak omong, tapi kalau bergerak, harus tepat.</p>
-        <p>Gue nggak pengen kelihatan mencolok, tapi gue pengen kalau orang liat, mereka tahu: ada sesuatu yang siap di balik diam itu. Biru, hitam, dan tenang — itu udah jadi bahasa gue sendiri.</p>
+      <!-- VISUAL NOTES -->
+      <section id="visual" class="reveal">
+        <h2>Visual notes &amp; color</h2>
+        <p>Biru listrik bukan semata warna; itu bahasa. Tenang dari kejauhan, intens dari dekat. Pilihan outfit yang sederhana dan rambut hitam—itu deklarasi: gue nggak pengen jadi pusat perhatian, gue pengen siap. Aura 'calm predator' bukan soal menakuti, tapi soal kesiapan. Kalau lo paham ini, lo paham kenapa gue lebih milih fungsi ketimbang tampilan.</p>
       </section>
 
-      <section id="legacy">
-        <h2>Warisan &amp; Dampak</h2>
-        <p>Buat sebagian orang, perjalanan ini mungkin sederhana. Tapi buat gue, ini perjalanan balik ke diri sendiri. Dari marah jadi sadar, dari ribut jadi tenang. Gue pengen orang baca kisah ini dan ngerasa: lo juga bisa berubah, tanpa harus kehilangan siapa lo sebenarnya.</p>
+      <!-- LEGACY -->
+      <section id="legacy" class="reveal">
+        <h2>Legacy &amp; intent</h2>
+        <p>Ini bukan naskah final. Ini arsip hidup — catatan yang bakal gue update. Tujuannya bukan jadi legenda cepat, tapi jadi peta kecil buat siapa pun yang merasa tersesat di antara ledakan emosi dan kehendak untuk tenang. Kalau ada yang baca dan ngerasa: 'oh, gue juga bisa', berarti halaman ini udah nyelesain tugasnya.</p>
       </section>
 
-      <footer>
-        <div class="note">Halaman ini akan terus gue update seiring gue tumbuh. Semua karakter yang disebut di sini cuma simbol — karena tiap orang punya versi badai dan ketenangannya sendiri.</div>
+      <footer class="reveal">
+        <div class="note">This page is continuously updated following the personal growth of A., known as Razen. All fictional characters referenced are cited for interpretive and creative purposes.</div>
+        <div style="margin-top:8px">External References &amp; Further Reading:</div>
+        <ul style="color:var(--muted);margin-top:8px">
+          <li><a href="https://en.wikipedia.org/">https://en.wikipedia.org/</a></li>
+          <li><a href="https://fandom.com/">https://fandom.com/</a></li>
+          <li><a href="https://medium.com/">https://medium.com/</a></li>
+        </ul>
         <div class="quote-end">“Ditulis bukan buat didengar, tapi biar yang diam bisa ikut merasa.” — <strong>Razen</strong></div>
       </footer>
+
     </article>
   </div>
+
+  <script>
+    // Reveal on scroll
+    (function(){
+      const obsOptions = { threshold: 0.06 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.classList.add('show');
+        });
+      }, obsOptions);
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+
+    // Theme toggle (neutral dark)
+    (function(){
+      const KEY = 'razen_theme';
+      const body = document.documentElement;
+      const btn = document.getElementById('toggleTheme');
+
+      function applyTheme(mode){
+        if(mode === 'dark'){
+          body.classList.add('dark');
+          btn.textContent = '☀️ Light Mode';
+          btn.setAttribute('aria-pressed', 'true');
+        } else {
+          body.classList.remove('dark');
+          btn.textContent = '🌙 Dark Mode';
+          btn.setAttribute('aria-pressed', 'false');
+        }
+      }
+
+      // init from localStorage or system preference
+      const saved = localStorage.getItem(KEY);
+      if(saved){
+        applyTheme(saved);
+      } else {
+        // default use system preference for dark
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(prefersDark ? 'dark' : 'light');
+      }
+
+      btn.addEventListener('click', () => {
+        const isDark = body.classList.toggle('dark');
+        applyTheme(isDark ? 'dark' : 'light');
+        localStorage.setItem(KEY, isDark ? 'dark' : 'light');
+      });
+    })();
+  </script>
 </body>
-  </html>
+                    </html>
